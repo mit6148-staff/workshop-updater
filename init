@@ -1,0 +1,33 @@
+#!/bin/bash
+
+WORKSHOP0="git@github.com:mit6148-workshops/catbook-workshop0.git"
+WORKSHOP1="git@github.com:mit6148-workshops/catbook-workshop1.git"
+WORKSHOP2="git@github.com:mit6148-workshops/catbook-workshop2.git"
+WORKSHOP3="git@github.com:mit6148-workshops/catbook-workshop3.git"
+WORKSHOP4="git@github.com:mit6148-workshops/catbook-workshop4.git"
+WORKSHOP5="git@github.com:mit6148-workshops/catbook-workshop5.git"
+# CATBOOK="git@github.com:mit6148-workshops/catbook.git"
+
+echo "Cloning all workshops into this directory"
+git clone $WORKSHOP0
+git clone $WORKSHOP1
+git clone $WORKSHOP2
+git clone $WORKSHOP3
+git clone $WORKSHOP4
+git clone $WORKSHOP5
+# git clone $CATBOOK
+
+for i in $(seq 0 5);
+do
+    # Add other workshops as remote so ./copy can move commits across them
+    echo "Linking workshop $i"
+    cd catbook-workshop$i
+    git remote add workshop0 $WORKSHOP0
+    git remote add workshop1 $WORKSHOP1
+    git remote add workshop2 $WORKSHOP2
+    git remote add workshop3 $WORKSHOP3
+    git remote add workshop4 $WORKSHOP4
+    git remote add workshop5 $WORKSHOP5
+    cd ..
+done
+
