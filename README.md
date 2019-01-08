@@ -4,7 +4,7 @@ Tool to more easily update Catbook workshops
 ## Making a change
 - Clone all catbook repos: `./init`
     - This adds other workbooks as git remotes, so we can transfer commits across repos
-- Make a change you want
+- Make a change you want and **commit**
 - Run copy: `./copy [WORKSHOP NUM] [BRANCH] [WORKSHOP NUM] [BRANCH]`
 
 ## Tips
